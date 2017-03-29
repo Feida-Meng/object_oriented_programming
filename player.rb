@@ -5,9 +5,9 @@
 # The restart instance method should set all attributes back to their starting values (5, 0, and 10).
 
 class Player
-
+    attr_accessor :gold_coins, :health_points, :lives
   def initialize()
-  
+
     @gold_coins = 0
     @health_points = 10
     @lives = 5
