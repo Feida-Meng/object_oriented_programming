@@ -17,20 +17,24 @@
 class  Cat
 
   # Every cat should have three attributes when they're created: name, preferred_food and meal_time
-  def initialize(:name, :preferred_food, :meal_time)
-    @name = :name
-    @preferred_food = :preferred_food
-    @meal_time = :meal_time.to_i
+  def initialize(name, preferred_food, meal_time)
+    @name = name
+    @preferred_food = preferred_food
+    @meal_time = meal_time.to_i
 
   end
 
   def eats_at
     if @meal_time > 12
       @meal_time -= 12
-      puts "#{@name} eats at #{@meal_time} PM"
+      return "#{@meal_time} PM"
     else
-      puts "#{@name} eats at #{@meal_time} AM"
+      return "#{@meal_time} AM"
     end
+  end
+
+  def meow
+    return "Meow..Meowwww, my name is #{@name} and I eat tuna at #{eats_at}"
   end
 
 end
