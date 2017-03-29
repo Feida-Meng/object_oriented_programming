@@ -1,6 +1,6 @@
 
 
-# Every cat should have three attributes when they're created: name, preferred_food and meal_time
+
 # Since we want these fields to be set for every Cat, you'll need to add an initialize method to your class
 # You can use irb to test out your class by loading your class into the console using the load method (i.e. load 'cat.rb') and then creating new instances of your class.
 # Create two instances of the Cat class in your file
@@ -16,5 +16,21 @@
 # Create a class called Cat
 class  Cat
 
+  # Every cat should have three attributes when they're created: name, preferred_food and meal_time
+  def initialize(:name, :preferred_food, :meal_time)
+    @name = :name
+    @preferred_food = :preferred_food
+    @meal_time = :meal_time.to_i
+
+  end
+
+  def eats_at
+    if @meal_time > 12
+      @meal_time -= 12
+      puts "#{@name} eats at #{@meal_time} PM"
+    else
+      puts "#{@name} eats at #{@meal_time} AM"
+    end
+  end
 
 end
